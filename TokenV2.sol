@@ -21,6 +21,12 @@ contract BlockApeScissorsToken is ERC20 {
         uint8 marketingTaxPercentage,
         uint8 lpTaxPercentage
     ) ERC20("Block Ape Scissors", "BAS") {
+
+        require(marketingTaxWallet != address(0) && lpTaxWallet != address(0), "Invalid addresses");
+        require(marketingTaxPercentage <= 5 && lpTaxPercentage <= 5, "Tax Percent too high");
+
+        //Where can i insert the immutable keyword here for gas optimization? the addresses and uints need to be modifiable
+
         _owner = msg.sender;
         _marketingTaxWallet = marketingTaxWallet;
         _lpTaxWallet = lpTaxWallet;
