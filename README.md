@@ -1,9 +1,12 @@
-# TokenV2Code
+# Old Token & Migration to new token
  Description of the Transition of Bas token V1 to Bas token V2, renamed Arcas. 
 
- Bas token v1 is currently in circulation with all liquidity on Pancakeswap V2. 
+The code for the new token can be found here:
+https://github.com/BlockApeScissors/Arcas-Contracts/blob/main/contracts/Token/BlockApeScissorsToken.sol
 
- The BAS v1 Token has the following issues:
+ Bas token v1 was previously in circulation with all liquidity on Pancakeswap V2. 
+
+ The BAS v1 Token had the following issues:
 
 - Admin access to IncludeInRewards and ExcludeFromRewards functions allows for admin wallet to dilute overall token supply. This issue occured once over a year ago and was resolved however the underlying security issue is still present.
 - Transfers are currently occuring without redistribution, however the rewards logic is ingrained within the transfer function, check line 822 of TokenV1.sol, This function ends up calling a series of unnecessary functions and performing numerous write operations that are costing users alot of unnecessary gas.
@@ -44,11 +47,9 @@ Multisender exempt contract address list
 
                                                     Total                   54,385,207
 
-Additionally, all wallets below 50 BAS tokens shall not be airdropped.
+Additionally, all wallets below 50 BAS tokens were not be airdropped.
 
-All other wallets shall be airdropped the Arcas Token.
-
-Arcas TokenV2 has been deployed on BNB Chain, all supply is currently help by the Deployer.
+Arcas has been deployed on BNB Chain.
 
 BNB Chain Deployment:
 https://bscscan.com/address/0xAd0926eCf31719263DC86426024794332d9dD9A3#code
